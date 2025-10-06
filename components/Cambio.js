@@ -16,6 +16,7 @@ const App = () => {
 
   const API_KEY = process.env.NEXT_PUBLIC_ALPHA_VANTAGE_API_KEY;
 
+ 
   // Função para formatar valores monetários
   const formatCurrency = (value) => {
     if (value === null || value === undefined) return "N/A";
