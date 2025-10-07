@@ -1,40 +1,54 @@
-/* Ibovespa.module.css */
+.tickerContainerWrapper {
+  overflow: hidden;
+  background-color: #0f2a44; /* Azul escuro para tema financeiro */
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+  margin: 20px auto;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.tickerContainer {
+  display: flex;
+  gap: 50px;
+  animation-name: tickerScroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--ticker-duration, 20s);
+}
+
+.cambioItem {
+  min-width: 150px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  user-select: none;
+  white-space: nowrap;
+  padding: 0 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cambioItem:last-child {
+  border-right: none;
+}
+
+/* Animação que move os itens da direita para a esquerda */
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(100%);
   }
-  
-  .h1 {
-    text-align: center;
-    font-size: 1.5em;
-    color: #007bff;
-    margin-bottom: 20px;
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .errorMessage {
-    color: #e74c3c; /* Vermelho para mensagens de erro */
-    text-align: center;
-    font-weight: bold;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 600px) {
+  .cambioItem {
+    min-width: 120px;
+    font-size: 1rem;
+    padding: 0 8px;
   }
-  
-  .chartjs-legend {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      padding: 15px;
-    }
-    
-    .h1 {
-      font-size: 2em;
-    }
-  }
-  
+}
