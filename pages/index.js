@@ -3,7 +3,7 @@ import Weather from '../components/Weather';
 import News from '../components/News';
 import styles from '../styles/Home.module.css';
 import Ibovespa from '../components/Ibovespa'
-import Cambio from '../components/Cambio'
+import Cambio from '../components/Bolsa'
 import Futebol from '../components/Futebol'
 
 export default function Home({ articles, error }) {
