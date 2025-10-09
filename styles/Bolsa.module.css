@@ -2,54 +2,51 @@
 .title {
   font-size: 2em;
   text-align: center;
-  margin-top: 20px; /* Espaço acima do título */
+  margin-top: 20px;
   font-weight: bold;
-  color: #007bff; /* Cor azul para o texto */
-  background-color: #fff; /* Fundo branco */
-  padding: 10px; /* Adicionando espaçamento interno para o título */
-
+  color: #ffffff; /* Texto branco */
+  background-color: #000000; /* Fundo preto */
+  padding: 10px;
 }
 
 /* Barra de rolagem abaixo do título */
 .tickerContainerWrapper {
-  width: 18.5vw; /* Reduzindo a largura para 80% da largura da tela */
-  background-color: #f9f9f9; /* Fundo branco */
-  padding: 0px 0; /* Espaço acima e abaixo dos itens */
-  margin-top: 0px; /* Espaçamento entre o título e a barra */
-  display: flex; /* Exibe os itens na horizontal */
-  overflow: hidden; /* Impede a barra de rolagem visível */
-  position: relative; /* Necessário para animações */
-  margin-left: auto; /* Centraliza a barra na tela */
-  margin-right: auto; /* Centraliza a barra na tela */
-  border-radius: 8px; /* Bordas arredondadas para a caixa */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombras suaves para destacar a caixa */
+  width: 100vw; /* Ocupa toda a largura da tela */
+  background-color: #000000; /* Fundo preto */
+  padding: 10px 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* Container que vai mostrar as cotações */
+/* Container que contém os itens */
 .tickerContainer {
   display: flex;
-  white-space: nowrap; /* Impede que os itens quebrem linha */
-  animation: scroll 15s linear infinite; /* Animação contínua, ajustada para durar mais */
-  justify-content: flex-start; /* Garante que os itens comecem do início */
+  white-space: nowrap;
+  animation: scroll 15s linear infinite;
+  justify-content: flex-start;
 }
 
 /* Estilo para cada item de câmbio */
 .cambioItem {
-  margin: 0 20px; /* Aumentado o espaçamento entre os itens (de 20px para 40px) */
-  padding: 10px 20px; /* Aumentado o espaçamento interno (de 5px para 10px e 10px para 20px) */
-  color: #007bff; /* Texto branco */
-  font-weight: bold; /* Texto em negrito */
+  margin: 0 40px;
+  padding: 10px 20px;
+  color: #ffffff; /* Texto branco */
+  font-weight: bold;
   font-style: italic;
-  font-size: 1.5em; /* Tamanho da fonte */
+  font-size: 1.5em;
   display: inline-block;
   text-align: center;
 }
 
-/* Estilo para o estado de carregamento */
+/* Estado de carregamento */
 .loader {
   font-size: 1.5em;
-  color: #007bff; /* Cor azul para o texto de carregamento */
-  text-align: center; /* Centralizar a mensagem de carregamento */
+  color: #ffffff; /* Texto branco */
+  text-align: center;
 }
 
 /* Estilo para o erro */
@@ -57,56 +54,56 @@
   color: #d9534f;
   text-align: center;
   padding: 20px;
-  background-color: #f2dede; /* Fundo vermelho claro */
-  border: 1px solid #ebccd1; /* Borda suave */
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
   border-radius: 5px;
 }
 
-/* Estilo do botão de erro */
+/* Botão de erro */
 .error button {
   background-color: #d9534f;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 12px 18px; /* Mais espaçamento para melhorar a usabilidade */
+  padding: 12px 18px;
   cursor: pointer;
-  margin-top: 15px; /* Mais espaço entre o erro e o botão */
+  margin-top: 15px;
 }
 
-/* Hover do botão de erro */
 .error button:hover {
-  background-color: #c9302c; /* Cor mais escura ao passar o mouse */
+  background-color: #c9302c;
 }
 
-/* Animação para o efeito de rolagem contínua */
+/* Animação da rolagem */
 @keyframes scroll {
   from {
-    transform: translateX(100%); /* Começa fora da tela à direita */
+    transform: translateX(100%);
   }
   to {
-    transform: translateX(-100%); /* Termina fora da tela à esquerda */
+    transform: translateX(-100%);
   }
 }
 
-/* Responsividade para telas menores */
+/* Responsividade para tablets */
 @media (max-width: 768px) {
   .tickerContainerWrapper {
-    padding: 5px 0; /* Menos espaço nos lados em telas pequenas */
+    padding: 5px 0;
   }
 
   .cambioItem {
-    font-size: 1.2em; /* Fonte menor para dispositivos móveis */
-    margin: 0 25px; /* Aumentado o espaçamento entre os itens em dispositivos móveis */
+    font-size: 1.2em;
+    margin: 0 25px;
   }
 }
 
+/* Responsividade para celulares */
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5em; /* Fonte menor para o título em dispositivos muito pequenos */
+    font-size: 1.5em;
   }
 
   .cambioItem {
-    font-size: 1em; /* Fonte ainda menor para itens de câmbio */
-    margin: 0 15px; /* Aumentado o espaçamento entre os itens */
+    font-size: 1em;
+    margin: 0 15px;
   }
 }
